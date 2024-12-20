@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sri Ramanujar Engineering College</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-roboto">
+
+  <!-- Hero Section -->
+  <section class="bg-blue-800 text-white py-6 text-center">
+    <div class="container mx-auto px-4">
+      <h6 class="text-xl sm:text-5xl font-bold mb-4">Welcome to Sri Ramanujar Engineering College</h6>
+      <h6 class="text-xl sm:text-5xl font-bold mb-4">Department Of Computer Science</h6>
+      
+    </div>
+  </section>
+
+  <!-- Image Carousel Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-semibold text-center mb-6">Explore Our Campus</h2>
+      
+      <!-- Carousel -->
+      <div class="relative">
+        <div class="overflow-hidden rounded-lg">
+          <div id="carousel" class="flex transition-transform duration-500">
+            <div class="flex-shrink-0 w-full">
+              <img src="https://sriramanujar.ac.in/wp-content/uploads/2024/01/evn-img-3.jpg" class="w-full h-full object-cover rounded-lg shadow-md" alt="Campus Image 1">
+            </div>
+            <div class="flex-shrink-0 w-full">
+              <img src="https://sriramanujar.ac.in/wp-content/uploads/2024/02/05.jpg" class="w-full h-full object-cover rounded-lg shadow-md" alt="Campus Image 2">
+            </div>
+            <div class="flex-shrink-0 w-full">
+              <img src="https://sriramanujar.ac.in/wp-content/uploads/2024/03/11.jpg" class="w-full h-full object-cover rounded-lg shadow-md" alt="Campus Image 3">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button id="prev" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700">
+          &#60;
+        </button>
+        <button id="next" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700">
+          &#62;
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center mb-8">Computer Lab</h1>
+  
+      <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6">
+        <!-- Image 1 -->
+        <div class="bg-white  rounded-lg shadow-lg">
+          <img src="https://sriramanujar.ac.in/wp-content/uploads/2024/03/ai-ds-photo.jpg" alt="image 1">
+        </div>
+  
+        <!-- Image 2 -->
+        <div class="bg-white  rounded-lg shadow-lg">
+          <img src="https://sriramanujar.ac.in/wp-content/uploads/2024/03/csbsc-image.jpg" alt="image 2">
+        </div>
+  
+        <!-- Image 3 -->
+        <div class="bg-white  rounded-lg shadow-lg">
+          <img src="https://sriramanujar.ac.in/wp-content/uploads/2024/01/cse-image.jpg" alt="image 3" >
+        </div>
+  
+        <!-- Image 4 -->
+        <div class="bg-white  rounded-lg shadow-lg">
+          <img src="https://sriramanujar.ac.in/wp-content/uploads/2024/01/it-image.jpg" alt="image 4" >
+        </div>
+  
+     
+  
+  
+       
+  
+      </div>
+    </div>
+      
+
+  </section>
+
+  <section>
+    <h1 class="text-3xl font-bold text-center mt-20">Our Graduated Computer Science Department Students </h1>
+    <div class="flex-shrink-0 w-full mt-14 ">
+      <img src="https://sriramanujar.ac.in/wp-content/uploads/2024/02/05.jpg" class="w-full h-full object-cover rounded-lg shadow-md" alt="Campus Image 1">
+    </div>
+
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold mb-6">About Us</h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto text=justify">At Sri Ramanujar Engineering College, we believe in providing high-quality education that prepares students for a future of success. With a diverse range of programs and a commitment to academic excellence, we are shaping the future of education.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2024 Sri Ramanujar Engineering College. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript for carousel functionality
+    const carousel = document.getElementById('carousel');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let currentIndex = 0;
+    const totalSlides = carousel.children.length;
+
+    // Function to move the carousel
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Show next slide
+    nextButton.addEventListener('click', () => {
+      if (currentIndex < totalSlides - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // Loop back to first slide
+      }
+      updateCarousel();
+    });
+
+    // Show previous slide
+    prevButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = totalSlides - 1; // Loop back to last slide
+      }
+      updateCarousel();
+    });
+  </script>
+
+</body>
+
+</html>
